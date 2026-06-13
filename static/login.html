@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Social Hub</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="login-body">
+    <main class="login-shell">
+      <section class="login-panel">
+        <p class="eyebrow">Invite only</p>
+        <h1>Social Hub</h1>
+        <p class="lede">Groups, sports, events, hosting, and life updates for people you actually know.</p>
+        <form id="loginForm" class="form-stack">
+          <label>
+            Name
+            <input name="name" autocomplete="name" placeholder="Aman" />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Invite code
+            <input name="invite_code" autocomplete="one-time-code" placeholder="SOCIALHUB" required />
+          </label>
+          <button type="submit">Enter hub</button>
+          <p id="loginStatus" class="status-text"></p>
+        </form>
+      </section>
+    </main>
+    <script src="/static/login.js"></script>
+  </body>
+</html>

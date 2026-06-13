@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Social Hub</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Private social coordination</p>
+        <h1>Social Hub</h1>
+      </div>
+      <nav>
+        <a href="/">Hub</a>
+        <a id="fifaNav" href="https://aman-fifa-sweepstake.onrender.com" target="_blank" rel="noopener">FIFA</a>
+        <button id="logoutButton" type="button">Logout</button>
+      </nav>
+    </header>
+
+    <main class="app-shell">
+      <section class="hero-band">
+        <div>
+          <p class="eyebrow">Groups + modules</p>
+          <h2 id="welcomeTitle">Welcome back</h2>
+          <p>
+            Organise people, match interests, track competitions, host events, and remember what matters to friends and family.
+          </p>
+        </div>
+        <a class="fifa-card" id="fifaCard" href="https://aman-fifa-sweepstake.onrender.com" target="_blank" rel="noopener">
+          <span>External link</span>
+          <strong>Aman's FIFA Sweepstake</strong>
+          <small>Opens the existing Render site. No Social Hub data is shared.</small>
+        </a>
+      </section>
+
+      <section id="hubView">
+        <div class="section-heading">
+          <div>
+            <h2>Your groups</h2>
+            <p>Each group enables its own tools.</p>
+          </div>
+        </div>
+        <div id="groups" class="grid cards"></div>
+
+        <div class="section-heading">
+          <div>
+            <h2>Enabled modules</h2>
+            <p>Active tools first, future ideas visible without becoming distractions.</p>
+          </div>
+        </div>
+        <div id="modules" class="grid modules"></div>
+
+        <div class="section-heading">
+          <div>
+            <h2>Recent activity</h2>
+            <p>Group updates from sports, events, hosting, and Life Map.</p>
+          </div>
+        </div>
+        <div id="activity" class="activity-list"></div>
+      </section>
+
+      <section id="groupView" class="hidden">
+        <button id="backButton" class="secondary" type="button">Back to hub</button>
+        <div id="groupDetail"></div>
+
+        <div class="tool-grid">
+          <section class="tool-panel">
+            <h2>Tennis scoring</h2>
+            <form id="tennisForm" class="form-grid">
+              <input name="team_a" placeholder="Team A" value="Aman" />
+              <input name="team_b" placeholder="Team B" value="James" />
+              <select name="format">
+                <option value="best_of_3">Best of 3</option>
+                <option value="best_of_5">Best of 5</option>
+                <option value="one_set">One set</option>
+                <option value="pro_set">Pro set</option>
+              </select>
+              <select name="scoring">
+                <option value="advantage">Advantage</option>
+                <option value="no_ad">No-ad</option>
+              </select>
+              <button type="submit">Start</button>
+            </form>
+            <div id="tennisScore" class="score-box"></div>
+            <div class="button-row">
+              <button id="pointA" type="button">Point A</button>
+              <button id="pointB" type="button">Point B</button>
+              <button id="undoPoint" class="secondary" type="button">Undo</button>
+            </div>
+          </section>
+
+          <section class="tool-panel">
+            <h2>Badminton ladder</h2>
+            <div id="ladder"></div>
+            <form id="badmintonForm" class="form-grid">
+              <select name="winner_id" id="winnerSelect"></select>
+              <select name="loser_id" id="loserSelect"></select>
+              <input name="score" placeholder="21-17, 21-19" />
+              <label class="checkbox-label"><input name="disputed" type="checkbox" /> Disputed</label>
+              <button type="submit">Submit result</button>
+            </form>
+          </section>
+
+          <section class="tool-panel">
+            <h2>Events & hosting</h2>
+            <form id="eventForm" class="form-grid">
+              <input name="title" placeholder="BBQ June 20" required />
+              <input name="starts_at" type="datetime-local" />
+              <input name="location" placeholder="Location" />
+              <input name="description" placeholder="Food, polls, bring-items, cost split" />
+              <button type="submit">Create event</button>
+            </form>
+            <div id="events" class="stack"></div>
+          </section>
+
+          <section class="tool-panel">
+            <h2>Life Map</h2>
+            <form id="lifeForm" class="form-grid">
+              <select name="category">
+                <option>listening to</option>
+                <option>reading</option>
+                <option>watching</option>
+                <option>learning</option>
+                <option>working on</option>
+                <option>excited about</option>
+                <option>worried about</option>
+                <option>craving</option>
+                <option>places to visit</option>
+                <option>skills to learn</option>
+                <option>favourite memories</option>
+                <option>gift ideas</option>
+                <option>food preferences</option>
+              </select>
+              <input name="title" placeholder="Short title" required />
+              <input name="body" placeholder="A useful detail people can remember" />
+              <select name="visibility">
+                <option value="selected_group">Selected group</option>
+                <option value="only_me">Only me</option>
+                <option value="friends">Friends</option>
+                <option value="family">Family</option>
+              </select>
+              <button type="submit">Add update</button>
+            </form>
+            <div id="lifeEntries" class="stack"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
